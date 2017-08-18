@@ -1,10 +1,12 @@
 // todo
 node {
-    stage('git') {
+   stage('git') {
 	git 'https://github.com/4admin2root/myhomework'
     }
     stage('mvn') {
 	sh 'bash maven_build.sh'
     }
+    stage('docker') {
+	sh 'bash docker_build.sh'
+    }
 }
-

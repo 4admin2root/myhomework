@@ -6,4 +6,3 @@ ADD ./target /opt/myhomework
 WORKDIR /opt/myhomework
 EXPOSE 8080
 ENTRYPOINT ["$JAVA_HOME/bin/java", "-jar", "cloud-simple-helloworld-0.0.1.jar"]
-
