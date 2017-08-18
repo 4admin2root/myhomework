@@ -10,8 +10,7 @@ node {
 	sh 'bash docker_build.sh'
     }
     stage('test') {
-	sleep 15
-	sh 'curl http://localhost:8888'
+	sh 'curl --connect-timeout 20 --retry 5 --retry-delay 5 http://localhost:8888/'
     }
     stage('clean') {
 	sh 'sudo docker rm -f helloworld'
