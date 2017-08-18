@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-cd myhomework/
+#cd myhomework/
 # build
 sudo docker build . -t 4admin2root/cloud-simple-helloword:latest
 # run docker
