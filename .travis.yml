@@ -7,13 +7,10 @@ services:
 before_install:
 - docker pull 4admin2root/maven:3.5
 
-script:
-- docker run  -i -v $PWD:/opt/myhomework -v $PWD/.m2:/root/.m2 -w /opt/myhomework 4admin2root/maven:3.5 mvn install
-- docker build . -t 4admin2root/cloud-simple-helloworld:latest
-
 
 after_success:
+  - docker build . -t 4admin2root/cloud-simple-helloworld:latest
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker push 4admin2root/helloworld:latest;
+    docker push 4admin2root/cloud-simple-helloworld:latest;
     fi
