@@ -9,7 +9,7 @@ before_install:
 
 jdk:
   - oraclejdk8
-  - oraclejdk7
+#  - oraclejdk7
 
 after_success:
   - docker build . -t 4admin2root/cloud-simple-helloworld:latest
