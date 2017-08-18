@@ -10,6 +10,7 @@ node {
 	sh 'bash docker_build.sh'
     }
     stage('test') {
+	sleep 10
 	sh 'curl http://localhost:8888'
     }
     stage('clean') {
