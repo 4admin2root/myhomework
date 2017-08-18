@@ -1,0 +1,9 @@
+# base 
+FROM 4admin2root/jdk:8
+MAINTAINER Jason <piml.lui@gmail.com>
+RUN yum install wget -y
+RUN cd /opt/ && wget http://mirror.bit.edu.cn/apache/maven/maven-3/3.5.0/binaries/apache-maven-3.5.0-bin.tar.gz && tar -xvf apache-maven-3.5.0-bin.tar.gz && rm apache-maven-3.5.0-bin.tar.gz
+ENV MVN_HOME /opt/apache-maven-3.5.0
+# ENV JAVA_HOME
+ENV JAVA_HOME /usr/java/jdk1.8.0_71
+ENV PATH=$JAVA_HOME/bin:$MVN_HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin

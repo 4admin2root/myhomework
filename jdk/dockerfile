@@ -1,5 +1,6 @@
 # base centos:7
 FROM centos:7
+MAINTAINER Jason <piml.lui@gmail.com>
 # install jdk
 RUN yum install http://mirrors-i.xzxpay.com:8080/pkg/jdk/jdk-8u71-linux-x64.rpm -y
 # ENV JAVA_HOME

@@ -1,9 +1,7 @@
 // todo
 node {
     stage('test') {
-        dir('.') {
-           echo 'test' 
-        }
+	sh 'maven_build.sh'
     }
 }
 
