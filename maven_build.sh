@@ -2,4 +2,4 @@
 #git clone https://github.com/4admin2root/myhomework
 #cd myhomework/
 # build
-sudo docker run  -it -v $PWD:/opt/myhomework -v $PWD/.m2:/root/.m2 -w /opt/myhomework 4admin2root/maven:3.5 mvn install
+sudo docker run  -i -v $PWD:/opt/myhomework -v $PWD/.m2:/root/.m2 -w /opt/myhomework 4admin2root/maven:3.5 mvn install
