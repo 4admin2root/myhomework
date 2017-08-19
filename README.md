@@ -8,8 +8,6 @@
 3. download maven package with long time
 4. jenkins user must be in sudoer  to run docker: sudo docker xxx
 ## todo:
-1. maven build sprintboot
-2. travis 
-3. ansible
+1. add nginx for static files
 others
 

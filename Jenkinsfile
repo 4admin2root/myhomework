@@ -10,7 +10,7 @@ node {
 	sh 'bash docker_build.sh'
     }
     stage('test') {
-        sleep 30
+        sleep 60
 	sh 'curl --connect-timeout 20 --retry 5 --retry-delay 5 http://localhost:8888/'
 	// sh 'wget --timeout=20 --tries=5 http://localhost:8888/'
     }
