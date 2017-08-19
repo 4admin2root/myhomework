@@ -1,5 +1,4 @@
 [![Build Status](https://travis-ci.org/4admin2root/myhomework.svg?branch=master)](https://travis-ci.org/4admin2root/myhomework)
-# my_tcpconn
 # myhomework
 ## get ready
 1. create a job in jenkins
