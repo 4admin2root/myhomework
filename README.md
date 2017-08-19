@@ -6,6 +6,7 @@
   file name is : Jenkinsfile
 2. jenkins server with git and docker 
 3. download maven package with long time
+4. jenkins user must be in sudoer  to run docker: sudo docker xxx
 ## todo:
 1. maven build sprintboot
 2. travis 

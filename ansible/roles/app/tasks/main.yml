@@ -1,0 +1,30 @@
+---
+- name: install python-pip
+  yum: name=python-pip state=present
+
+- name: install docker-py
+  pip: name=docker-py
+
+- name: docker pull 
+  docker_image:
+    name: "{{ app_docker_image_url }}"
+
+- name: docker run
+  docker_container:
+    name: app
+    image: "{{ app_docker_image_url }}"
+    recreate: yes
+    ports:
+      - "{{ app_port }}:{{ app_docker_image_port }}"
+    #volumes:
+    #  - "{{ etcd_data_dir }}:{{ etcd_data_dir }}"
+
+- name: wait for appserver
+  wait_for: host=localhost port={{ app_port }} delay=10
+
+- name: http get helloworld
+  shell: curl http://localhost:{{ app_port }}/ |grep -i 'hello world'
+  register: result
+  until: result.rc == 0
+  retries: 50
+  delay: 10

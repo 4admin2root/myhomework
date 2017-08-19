@@ -1,0 +1,5 @@
+---
+- hosts: app
+  roles: 
+     - app
+     #- { role: app, when: "ansible_distribution == 'CentOS'  and ansible_distribution_major_version == '7'" }

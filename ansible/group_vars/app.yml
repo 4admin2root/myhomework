@@ -1,0 +1,4 @@
+---
+app_docker_image_url: 4admin2root/cloud-simple-helloworld
+app_docker_image_port: 8080
+app_port: 8888
