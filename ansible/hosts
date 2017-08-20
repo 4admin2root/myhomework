@@ -4,3 +4,7 @@ k8sprod2
 [app_prod]
 #gyq.devopsec.tech
 k8sprod1
+[nginx_test]
+k8sprod2
+[nginx_prod]
+k8sprod1

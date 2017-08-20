@@ -10,8 +10,8 @@
 2. create some scripts(python or shell) for alert, deploying more than one media types is recommended, for example : email\sms\wechat.
 3. the zabbix support linux os, but  it‘s basic, you must deploy applications monitor. for example:  
 there are two motheds in springboot app :
-1. jmx 
-2. http get metrics
+* jmx 
+* http get metrics
 
 # LOG
 1. recommended : ELK (elasticsearch\logstash\kibana), it is really very good .

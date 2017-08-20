@@ -46,7 +46,9 @@ for prod
 ```
 ansible-playbook -i hosts -b app_prod.yml
 ```
-You can find more informations in file ansible/README.md
+You can find more informations in file ansible/README.md  
+somethings to know:
+1. use jar instead of war , because of springboot
 
 ## others
  go to dir 'others'

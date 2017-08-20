@@ -1,0 +1,46 @@
+---
+- name: install python-pip
+  yum: name=python-pip state=present
+
+- name: install docker-py
+  pip: name=docker-py
+
+- name: docker pull 
+  docker_image:
+    name: "{{ nginx_docker_image_url }}"
+
+- name: create /opt/myhomework/
+  file: path={{ workdir }}/{{ item }} state=directory mode=0755
+  with_items:
+      - static
+      - nginx
+
+- name: yum install zip
+  yum: name=zip state=present
+
+- name: download zip file
+  unarchive: src=https://raw.githubusercontent.com/4admin2root/myhomework/master/static/static_{{ env }}.zip dest={{ workdir }}/static
+ 
+- name: template nginx file
+  template: src=default.conf dest={{ workdir }}/nginx
+ 
+- name: docker run
+  docker_container:
+    name: app
+    image: "{{ nginx_docker_image_url }}"
+    recreate: yes
+    ports:
+      - "{{ nginx_port }}:{{ nginx_docker_image_port }}"
+    volumes:
+      - "{{ workdir }}/static:/usr/share/nginx/html/static:ro"
+      - "{{ workdir }}/nginx/default.conf:/etc/nginx/conf.d/default.conf:ro"
+
+- name: wait for nginx
+  wait_for: host=localhost port={{ nginx_port }} delay=10
+
+- name: http get png
+  shell: curl http://localhost:{{ nginx_port }}/static/spring-cloud-starters.png
+  register: result
+  until: result.rc == 0
+  retries: 50
+  delay: 10

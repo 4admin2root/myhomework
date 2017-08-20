@@ -1,0 +1,6 @@
+---
+nginx_docker_image_url: nginx:1.13.3
+nginx_docker_image_port: 80
+nginx_port: 8889
+env: prod
+workdir: /opt/myhomework
