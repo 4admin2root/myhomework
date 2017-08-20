@@ -17,7 +17,7 @@ public class BootApplicationSample  {
     @ResponseBody
     @RequestMapping(value = "/hello/{myName}")
     String hello(@PathVariable String myName) {
-        return "Hello "+myName;
+        return "Hello "+myName+"!";
     }
 
     public static void main(String[] args) throws Exception {
