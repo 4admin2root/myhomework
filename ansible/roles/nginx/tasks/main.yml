@@ -19,14 +19,14 @@
   yum: name=zip state=present
 
 - name: download zip file
-  unarchive: src=https://raw.githubusercontent.com/4admin2root/myhomework/master/static/static_{{ env }}.zip dest={{ workdir }}/static
+  unarchive: src=static_{{ env }}.zip dest={{ workdir }}/static
  
 - name: template nginx file
   template: src=default.conf dest={{ workdir }}/nginx
  
 - name: docker run
   docker_container:
-    name: app
+    name: nginx
     image: "{{ nginx_docker_image_url }}"
     recreate: yes
     ports:
