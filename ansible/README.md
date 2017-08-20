@@ -1,7 +1,7 @@
 # follow me
 
 
-➜  ansible git:(master) ✗ ansible-playbook -i hosts -b app.yml
+➜  ansible git:(master) ✗ ansible-playbook -i hosts -b app_test.yml
  ____________
 < PLAY [app] >
  ------------

@@ -1,3 +1,6 @@
-[app]
+[app_test]
 #gyq.devopsec.tech
 k8sprod2
+[app_prod]
+#gyq.devopsec.tech
+k8sprod1

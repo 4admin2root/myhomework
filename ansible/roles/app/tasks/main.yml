@@ -13,6 +13,7 @@
   docker_container:
     name: app
     image: "{{ app_docker_image_url }}"
+    pull: true
     recreate: yes
     ports:
       - "{{ app_port }}:{{ app_docker_image_port }}"

@@ -1,12 +1,18 @@
 [![Build Status](https://travis-ci.org/4admin2root/myhomework.svg?branch=master)](https://travis-ci.org/4admin2root/myhomework)
 # myhomework
 ## environment
-OS: centos 7
-container: docker 17 (normal user can run command with sudo, for example: jenkins)
+OS: centos 7  
+container: docker 17 (normal user can run command with sudo, for example: jenkins)  
 scm: git and github
 
 ## for developers
-just run bash script : bash dev_test.sh
+just run bash script : 
+```
+git clone https://github.com/4admin2root/myhomework/
+cd myhomework
+bash dev_test.sh
+```
+
 somethings to know:
 * base on docker-compose
 * sleep 60 for springboot ready, maybe not enough
@@ -24,10 +30,23 @@ somethings to know:
 * sleep 60 for springboot ready, maybe not enough
 
 ### travis
-1. https://travis-ci.org/4admin2root/myhomework
-2. push docker image to dockerhut at last
+1. please browse https://travis-ci.org/4admin2root/myhomework
+
+somethings to know:
+* push docker image to dockerhut at last
 
 ## CD (dir: 'ansible')
+1. cd ansible
+2. run 
+for test
+```
+ansible-playbook -i hosts -b app_test.yml
+```
+for prod
+```
+ansible-playbook -i hosts -b app_prod.yml
+```
+You can find more informations in file ansible/README.md
 
 ## others
-
+ go to dir 'others'
