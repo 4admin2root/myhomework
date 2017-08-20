@@ -1,10 +1,9 @@
 # follow me
 
-
-➜  ansible git:(master) ✗ ansible-playbook -i hosts -b app_test.yml
- ____________
-< PLAY [app] >
- ------------
+➜  ansible git:(master) ✗ ansible-playbook -i hosts -b app_prod.yml
+ _________________
+< PLAY [app_prod] >
+ -----------------
         \   ^__^
          \  (oo)\_______
             (__)\       )\/\
@@ -20,7 +19,7 @@
                 ||----w |
                 ||     ||
 
-ok: [k8sprod2]
+ok: [k8sprod1]
  _________________________________
 < TASK [app : install python-pip] >
  ---------------------------------
@@ -30,7 +29,7 @@ ok: [k8sprod2]
                 ||----w |
                 ||     ||
 
-ok: [k8sprod2]
+^[lok: [k8sprod1]
  ________________________________
 < TASK [app : install docker-py] >
  --------------------------------
@@ -40,7 +39,7 @@ ok: [k8sprod2]
                 ||----w |
                 ||     ||
 
-ok: [k8sprod2]
+ok: [k8sprod1]
  __________________________
 < TASK [app : docker pull] >
  --------------------------
@@ -50,7 +49,7 @@ ok: [k8sprod2]
                 ||----w |
                 ||     ||
 
-ok: [k8sprod2]
+changed: [k8sprod1]
  _________________________
 < TASK [app : docker run] >
  -------------------------
@@ -60,7 +59,7 @@ ok: [k8sprod2]
                 ||----w |
                 ||     ||
 
-changed: [k8sprod2]
+changed: [k8sprod1]
  _________________________________
 < TASK [app : wait for appserver] >
  ---------------------------------
@@ -70,7 +69,7 @@ changed: [k8sprod2]
                 ||----w |
                 ||     ||
 
-ok: [k8sprod2]
+ok: [k8sprod1]
  __________________________________
 < TASK [app : http get helloworld] >
  ----------------------------------
@@ -82,8 +81,7 @@ ok: [k8sprod2]
 
 FAILED - RETRYING: TASK: app : http get helloworld (50 retries left).
 FAILED - RETRYING: TASK: app : http get helloworld (49 retries left).
-FAILED - RETRYING: TASK: app : http get helloworld (48 retries left).
-changed: [k8sprod2]
+changed: [k8sprod1]
  [WARNING]: Consider using get_url or uri module rather than running curl
 
  ____________
@@ -95,4 +93,4 @@ changed: [k8sprod2]
                 ||----w |
                 ||     ||
 
-k8sprod2                   : ok=7    changed=2    unreachable=0    failed=0
+k8sprod1                   : ok=7    changed=3    unreachable=0    failed=0
