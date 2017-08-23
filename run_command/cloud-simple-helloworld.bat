@@ -1,10 +1,10 @@
 @if "%DEBUG%" == "" @echo off
 @rem ##########################################################################
 @rem
-@rem  runnable-binary-distribution startup script for Windows
+@rem  cloud-simple-helloworld-0.0.1 startup script for Windows
 @rem
 @rem ##########################################################################
-
+set APP_NAME=cloud-simple-helloworld-0.0.1
 @rem Set local scope for the variables with windows NT shell
 if "%OS%"=="Windows_NT" setlocal
 
@@ -63,10 +63,10 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\runnable-binary-distribution.jar;%APP_HOME%\lib\log4j-1.2.17.jar
+set CLASSPATH=%APP_HOME%
 
-@rem Execute runnable-binary-distribution
-"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %RUNNABLE_BINARY_DISTRIBUTION_OPTS%  -classpath "%CLASSPATH%" net.petrikainulainen.gradle.HelloWorld %CMD_LINE_ARGS%
+@rem Execute cloud-simple-helloworld-0.0.1
+"%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %RUNNABLE_BINARY_DISTRIBUTION_OPTS%  -classpath "%CLASSPATH%" -jar %APP_NAME%.jar %CMD_LINE_ARGS%
 
 :end
 @rem End local scope for the variables with windows NT shell
