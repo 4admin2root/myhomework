@@ -25,7 +25,7 @@ spec:
       - env:
         - name: REDIS_HOST
           value: my-redis
-        image: 4admin2root/cloud-simple-helloworld:dev
+        image: 4admin2root/cloud-simple-helloworld:latest
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 10
