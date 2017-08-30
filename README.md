@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/4admin2root/myhomework.svg?branch=master)](https://travis-ci.org/4admin2root/myhomework)
+[![Quality Gate](https://sonarcloud.io/api/badges/gate?key=4admin2root-github:cloud-simple-helloworld)](https://sonarcloud.io/dashboard/index/4admin2root-github:cloud-simple-helloworld)
 # myhomework
 ## environment
 OS: centos 7  
