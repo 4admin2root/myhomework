@@ -25,8 +25,14 @@ jdk:
 
 script:
   # JaCoCo is used to have code coverage, the agent has to be activated
+   - mvn install -dmaven.test.skip=true
    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
   
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
 after_success:
   - docker build . -t 4admin2root/cloud-simple-helloworld:latest
   - docker run -d --rm --name helloworld -p 8888:8080 4admin2root/cloud-simple-helloworld:latest 
